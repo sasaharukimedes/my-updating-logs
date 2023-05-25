@@ -4,6 +4,8 @@ import { microcmsClient } from "../lib/microcmsClient.ts";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.tsx";
 
 export interface Post {
   contents: [{
@@ -35,15 +37,16 @@ export const handler: Handlers<Post> = {
 
 export default function Home({ data }: PageProps<Post>) {
   return (
-    <div class="h-screen bg-yellow-200">
+    <>
       <Head>
         <title>My Updating (b)logs</title>
       </Head>
-      <div class="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col">
+      <div class="max-w-screen mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col">
+        <Header />
         <h1 class="font-extrabold text-5xl text-gray-800 flex justify-center">
           My Updating (b)logs
         </h1>
-        <section class="m-8">
+        <section class="m-8 flex max-w-screen-sm">
           {data.contents.map((content) => {
             return (
               <div class="p-4" key={content.id}>
@@ -60,15 +63,8 @@ export default function Home({ data }: PageProps<Post>) {
             );
           })}
         </section>
-        <a href="https://fresh.deno.dev">
-          <img
-            width="197"
-            height="37"
-            src="https://fresh.deno.dev/fresh-badge.svg"
-            alt="Made with Fresh"
-          />
-        </a>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 }
