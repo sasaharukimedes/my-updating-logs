@@ -1,24 +1,74 @@
+import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import Counter from "../islands/Counter.tsx";
+import { microcmsClient } from "../lib/microcmsClient.ts";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
-export default function Home() {
+export interface Post {
+  contents: [{
+    id: string;
+    url?: string;
+    title: string;
+    content: string;
+    published_at?: string;
+  }];
+}
+
+//タイムゾーンを設定
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Asia/Tokyo");
+
+export const handler: Handlers<Post> = {
+  async GET(_req, ctx) {
+    const blogs = await microcmsClient.get<Post>({
+      endpoint: "blogs",
+      queries: { limit: 99 },
+    });
+    if (!blogs) {
+      return new Response("Response not found", { status: 404 });
+    }
+    return ctx.render(blogs);
+  },
+};
+
+export default function Home({ data }: PageProps<Post>) {
   return (
-    <>
+    <div class="h-screen bg-yellow-200">
       <Head>
-        <title>Fresh App</title>
+        <title>My Updating (b)logs</title>
       </Head>
-      <div class="p-4 mx-auto max-w-screen-md">
-        <img
-          src="/logo.svg"
-          class="w-32 h-32"
-          alt="the fresh logo: a sliced lemon dripping with juice"
-        />
-        <p class="my-6">
-          Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
-          file, and refresh.
-        </p>
-        <Counter start={3} />
+      <div class="max-w-screen-sm mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col">
+        <h1 class="font-extrabold text-5xl text-gray-800 flex justify-center">
+          My Updating (b)logs
+        </h1>
+        <section class="m-8">
+          {data.contents.map((content) => {
+            return (
+              <div class="p-4" key={content.id}>
+                <a href={content.url} alt={content.title}>
+                  <p>{content.title}</p>
+                  <time
+                    class="text-gray-500 text-sm"
+                    dateTime={content.published_at}
+                  >
+                    {dayjs(content.published_at).format("YYYY-MM-DD HH:mm:ss")}
+                  </time>
+                </a>
+              </div>
+            );
+          })}
+        </section>
+        <a href="https://fresh.deno.dev">
+          <img
+            width="197"
+            height="37"
+            src="https://fresh.deno.dev/fresh-badge.svg"
+            alt="Made with Fresh"
+          />
+        </a>
       </div>
-    </>
+    </div>
   );
 }
