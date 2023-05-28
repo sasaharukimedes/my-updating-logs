@@ -54,9 +54,9 @@ export default function Home({ data }: PageProps<Post>) {
                   <p>{content.title}</p>
                   <time
                     class="text-gray-500 text-sm"
-                    dateTime={content.published_at}
+                    dateTime={content.createdAt}
                   >
-                    {dayjs(content.published_at).format("YYYY-MM-DD HH:mm:ss")}
+                    {dayjs(content.createdAt).format("YYYY-MM-DD HH:mm")}
                   </time>
                 </a>
               </div>
