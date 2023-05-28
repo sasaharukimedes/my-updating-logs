@@ -43,10 +43,10 @@ export default function Home({ data }: PageProps<Post>) {
       </Head>
       <div class="max-w-screen mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col">
         <Header />
-        <h1 class="font-extrabold text-5xl text-gray-800 flex justify-center">
+        <h1 class="mt-5 font-extrabold text-5xl text-gray-800 flex justify-center">
           My Updating (b)logs
         </h1>
-        <section class="m-8 flex max-w-screen-sm">
+        <section class="mt-12 text-lg flex mx-auto justify-center items-center">
           {data.contents.map((content) => {
             return (
               <div class="p-4" key={content.id}>

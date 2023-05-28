@@ -4,14 +4,21 @@ type Props = {
 
 export default function Header({ active }: Props) {
   const menus = [
-    { name: "AboutMe", href: "/" },
-    { name: "Articles", href: "/articles" },
+    { name: "AboutMe", href: "/aboutme" },
+    { name: "Articles", href: "/" },
     { name: "Portfolio", href: "/portfolio" },
   ];
 
   return (
     <div class="bg-white w-full max-w-screen py-6 px-8 flex flex-col md:flex-row gap-4">
       <div class="flex items-center flex-1">
+        <img
+          width="30"
+          height="30"
+          src="myself-cartoon.jpg"
+          alt="My image Cartoon"
+          class="mr-2"
+        />
         <div class="text-xl  ml-1 font-bold">
           My Updating (b)logs
         </div>
