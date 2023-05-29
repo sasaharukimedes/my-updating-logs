@@ -41,9 +41,9 @@ export default function Home({ data }: PageProps<Post>) {
       <Head>
         <title>My Updating (b)logs</title>
       </Head>
-      <div class="max-w-screen mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col">
+      <div class="font-mono bg-slate-100 mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col justify-center">
         <Header />
-        <h1 class="mt-5 font-extrabold text-5xl text-gray-800 flex justify-center">
+        <h1 class="mt-5 font-extrabold text-4xl text-gray-500 flex mx-auto items-center justify-center">
           My Updating (b)logs
         </h1>
         <section class="mt-12 text-lg flex mx-auto justify-center items-center">
@@ -56,7 +56,7 @@ export default function Home({ data }: PageProps<Post>) {
                     class="text-gray-500 text-sm"
                     dateTime={content.createdAt}
                   >
-                    {dayjs(content.createdAt).format("YYYY-MM-DD HH:mm")}
+                    {dayjs(content.createdAt).format("YYYY年MM月DD日 HH:mm")}
                   </time>
                 </a>
               </div>

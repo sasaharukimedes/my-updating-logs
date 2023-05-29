@@ -13,6 +13,7 @@
     "microcms": "https://esm.sh/microcms-js-sdk",
     "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
     "dayjs/": "https://esm.sh/dayjs@1.11.3/",
-    "dayjs": "https://esm.sh/dayjs@1.11.3"
+    "dayjs": "https://esm.sh/dayjs@1.11.3",
+    "@tabler/icons/": "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/"
   }
 }

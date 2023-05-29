@@ -10,20 +10,20 @@ export default function Header({ active }: Props) {
   ];
 
   return (
-    <div class="bg-white w-full max-w-screen py-6 px-8 flex flex-col md:flex-row gap-4">
+    <div class="bg-slate-100 w-full mx-auto py-4 px-8 flex flex-col md:flex-row gap-2">
       <div class="flex items-center flex-1">
         <img
-          width="30"
-          height="30"
-          src="myself-cartoon.jpg"
+          width="70"
+          height="70"
+          src="me.svg"
           alt="My image Cartoon"
           class="mr-2"
         />
-        <div class="text-xl  ml-1 font-bold">
+        <div class="text-xl font-bold">
           My Updating (b)logs
         </div>
       </div>
-      <ul class="flex items-center gap-6">
+      <ul class="flex items-center justify-end gap-3">
         {menus.map((menu) => (
           <li>
             <a
