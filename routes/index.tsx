@@ -13,7 +13,6 @@ export interface Post {
     url?: string;
     title: string;
     content: string;
-    published_at?: string;
   }];
 }
 
