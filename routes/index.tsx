@@ -40,7 +40,7 @@ export default function Home({ data }: PageProps<Post>) {
       <Head>
         <title>My Updating (b)logs</title>
       </Head>
-      <div class="font-mono bg-slate-100 mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col justify-center">
+      <div class="font-sans bg-slate-100 mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col justify-center">
         <Header />
         <h1 class="mt-5 font-extrabold text-4xl text-gray-500 flex mx-auto items-center justify-center">
           My Updating (b)logs
@@ -50,7 +50,7 @@ export default function Home({ data }: PageProps<Post>) {
             return (
               <div class="p-4" key={content.id}>
                 <a href={content.url} alt={content.title}>
-                  <p>{content.title}</p>
+                  <p class="text-xl  hover:font-extrabold">{content.title}</p>
                   <time
                     class="text-gray-500 text-sm"
                     dateTime={content.createdAt}
