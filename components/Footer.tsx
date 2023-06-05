@@ -15,7 +15,7 @@ export default function Footer({ children }: Props) {
 
         <div class="flex justify-between items-center">
           <a
-            href="https://github.com/denoland/fresh"
+            href="https://github.com/sasaharukimedes"
             class="inline-block hover:text-black m-5"
           >
             <BrandGithub />

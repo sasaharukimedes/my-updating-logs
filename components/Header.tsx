@@ -15,20 +15,20 @@ export default function Header({ active }: Props) {
         <img
           width="70"
           height="70"
-          src="me.svg"
+          src="myself-image.gif"
           alt="My image Cartoon"
           class="mr-2"
         />
-        <div class="text-xl font-bold">
+        <a href="/" class="text-xl font-normal hover:font-bold">
           My Updating (b)logs
-        </div>
+        </a>
       </div>
       <ul class="flex items-center justify-end gap-3">
         {menus.map((menu) => (
           <li>
             <a
               href={menu.href}
-              class={"text-gray-500 hover:text-black hover:font-semibold py-1 border-gray-500" +
+              class={"text-gray-500 hover:text-black hover:font-bold py-1 border-gray-500" +
                 (menu.href === active ? " font-bold border-b-2" : "")}
             >
               {menu.name}
