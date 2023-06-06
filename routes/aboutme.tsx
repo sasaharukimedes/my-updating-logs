@@ -2,12 +2,13 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.tsx";
+import BrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/brand-github.tsx";
 
 export default function AboutMe() {
   return (
-    <>
+    <div class="bg-slate-100 w-full h-screen">
       <Header />
-      <div class="bg-slate-100 w-full mx-auto py-4 px-8 flex flex-col justify-center items-center gap-2">
+      <div class="mx-auto py-4 px-8 flex flex-col justify-center items-center gap-2">
         <h1 class="m-5 text-5xl font-bold ">
           About Me!!
         </h1>
@@ -23,6 +24,12 @@ export default function AboutMe() {
             <h2 class="mt-2 text-2xl font-bold">
               ハルキメデス
             </h2>
+            <a
+              href="https://github.com/sasaharukimedes"
+              class="inline-block hover:text-black m-5"
+            >
+              <BrandGithub />
+            </a>
           </div>
           <div class="mt-5 flex container  justify-center items-center mx-auto font-semibold">
             <div class="p-2 leading-loose">
@@ -31,15 +38,17 @@ export default function AboutMe() {
               After graduating, I attended a prep school for a year and then
               enrolled in the School of Global Japanese Studies at Meiji
               University.<br />
-              Now I'm a programmer, writing this blogs and creating my own apps.<br/>
-              In this blog, I will write about my feelings, thoughts, etc., and learnings about the program, regardless of genre.<br/>
-              So please read them if you are interested!<br/>
+              Now I'm a programmer, writing this blogs and creating my own
+              apps.<br />
+              In this blog, I will write about my feelings, thoughts, etc., and
+              learnings about the program, regardless of genre.<br />
+              So please read them if you are interested!<br />
               For more information about the program, please see the portfolio!
             </div>
           </div>
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
