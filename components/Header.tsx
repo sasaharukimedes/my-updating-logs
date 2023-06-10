@@ -15,7 +15,7 @@ export default function Header({ active }: Props) {
         <img
           width="70"
           height="70"
-          src="myself-image.gif"
+          src="/myself-image.gif"
           alt="My image Cartoon"
           class="mr-2"
         />
