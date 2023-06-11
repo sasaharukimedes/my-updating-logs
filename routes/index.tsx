@@ -47,7 +47,9 @@ export default function Home({ data }: PageProps<Post>) {
                     class="text-gray-500 text-sm"
                     dateTime={content.createdAt}
                   >
-                    {dayjs(content.createdAt).format("YYYY年MM月DD日 HH:mm")}
+                    {dayjs(content.createdAt).tz("Asia/Tokyo").format(
+                      "YYYY年MM月DD日 HH:mm",
+                    )}
                   </time>
                 </a>
               </div>

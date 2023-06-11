@@ -37,10 +37,12 @@ export default function Post({ data }: PageProps<Post>) {
                   {content.title}
                 </h1>
                 <time
-                  class="flex justify-end text-gray-500 mt-5 text-sm"
+                  class="flex justify-end text-gray-500 mt-5 font-semibold text-sm"
                   dateTime={content.createdAt}
                 >
-                  {dayjs(content.createdAt).format("YYYY年MM月DD日 HH:mm")}
+                  {dayjs(content.createdAt).tz("Asia/Tokyo").format(
+                    "YYYY年MM月DD日 HH:mm",
+                  )}
                 </time>
                 <div class="mt-5 font-semibold ">
                   {content.content}
