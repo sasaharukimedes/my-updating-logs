@@ -22,7 +22,7 @@ export default function AboutMe() {
               class="m-3"
             />
             <h2 class="mt-2 text-2xl font-bold">
-              ハルキメデス
+              Harukimedes
             </h2>
             <a
               href="https://github.com/sasaharukimedes"
