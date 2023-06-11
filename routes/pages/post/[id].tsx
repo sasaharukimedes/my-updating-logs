@@ -44,8 +44,10 @@ export default function Post({ data }: PageProps<Post>) {
                     "YYYY年MM月DD日 HH:mm",
                   )}
                 </time>
-                <div class="mt-5 font-semibold ">
-                  {content.content}
+                <div
+                  class="mt-5 font-semibold"
+                  dangerouslySetInnerHTML={{ __html: content.content }}
+                >
                 </div>
               </div>
             );
