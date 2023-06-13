@@ -37,7 +37,7 @@ export default function Home({ data }: PageProps<Post>) {
         <h1 class="mt-5 font-extrabold text-5xl flex mx-auto items-center justify-center">
           My Updating (b)logs
         </h1>
-        <section class="mt-12 text-lg flex mx-auto justify-center items-center">
+        <section class="mt-12 text-lg flex flex-col mx-auto justify-center items-center">
           {data.contents.map((content) => {
             return (
               <div class="p-4 font-semibold" key={content.id}>
