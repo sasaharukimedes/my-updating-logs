@@ -41,7 +41,7 @@ export default function Home({ data }: PageProps<Post>) {
           {data.contents.map((content) => {
             return (
               <div class="p-4 font-semibold" key={content.id}>
-                <a href={`/pages/post/${content.id}`} alt={content.title}>
+                <a href={`/pages/blog/${content.id}`} alt={content.title}>
                   <p class="text-2xl  hover:font-extrabold">{content.title}</p>
                   <time
                     class="text-gray-500 text-sm"

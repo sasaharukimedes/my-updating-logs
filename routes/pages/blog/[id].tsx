@@ -29,7 +29,7 @@ export default function Post({ data }: PageProps<Post>) {
       </Head>
       <div class="font-sans bg-slate-100 mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col justify-center">
         <Header />
-        <div class="mt-12 text-lg flex mx-auto justify-center items-center">
+        <div class="mt-12 text-lg flex flex-col mx-auto justify-center items-center">
           {data.contents.map((content) => {
             return (
               <div class="flex flex-col mx-auto" key={content.id}>
