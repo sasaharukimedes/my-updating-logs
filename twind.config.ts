@@ -7,13 +7,4 @@ export default {
     presets: [presetTailwind() as Preset],
   }),
   selfURL: import.meta.url,
-  // setup: {
-  //   theme: {
-  //     colors: {
-  //       back: "#e6e6d8",
-  //       gray: "#e5e7eb",
-  //       letter: "#121212",
-  //     },
-  //   },
-  // },
 } as Options;

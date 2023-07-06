@@ -26,7 +26,7 @@ export default function AboutMe() {
             </h2>
             <a
               href="https://github.com/sasaharukimedes"
-              class="inline-block hover:text-black m-5"
+              class="text-gray-500 inline-block hover:text-black m-3"
             >
               <BrandGithub />
             </a>
