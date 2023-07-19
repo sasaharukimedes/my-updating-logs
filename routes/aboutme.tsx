@@ -33,7 +33,7 @@ export default function AboutMe() {
           </div>
           <div class="mt-5 flex container  justify-center items-center mx-auto font-semibold">
             <div class="p-2 leading-loose">
-              I am 27 years old, born in 1995, from Hokkaido, Japan. <br />
+              I am 28 years old, born in 1995, from Hokkaido, Japan. <br />
               I was in Hokkaido until high school. <br />
               After graduating, I attended a prep school for a year and then
               enrolled in the School of Global Japanese Studies at Meiji
