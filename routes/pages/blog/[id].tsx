@@ -11,11 +11,13 @@ import Footer from "../../../components/Footer.tsx";
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
     const id = ctx.params.id;
+    console.log("id:", id); // idの値をコンソールに出力して確認
     const blogs = await microcmsClient.get<Post>({
       endpoint: "blogs",
       contentId: id,
       queries: { limit: 99 },
     });
+    console.log("blogs:", blogs); // blogsの値をコンソールに出力して確認
     if (!blogs) {
       return new Response("Response not found", { status: 404 });
     }
@@ -24,7 +26,7 @@ export const handler: Handlers<Post> = {
 };
 
 export default function Post({ data }: PageProps<Post>) {
-  const content = data.contents[2];
+  // const content = data.contents[0];
   return (
     <>
       <Head>
