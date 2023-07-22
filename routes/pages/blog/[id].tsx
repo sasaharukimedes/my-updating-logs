@@ -11,13 +11,13 @@ import Footer from "../../../components/Footer.tsx";
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
     const id = ctx.params.id;
-    console.log("id:", id); // idの値をコンソールに出力して確認
+    // console.log("id:", id); // idの値をコンソールに出力して確認
     const blogs = await microcmsClient.get<Post>({
       endpoint: "blogs",
       contentId: id,
       queries: { limit: 99 },
     });
-    console.log("blogs:", blogs); // blogsの値をコンソールに出力して確認
+    // console.log("blogs:", blogs); // blogsの値をコンソールに出力して確認
     if (!blogs) {
       return new Response("Response not found", { status: 404 });
     }
@@ -27,7 +27,7 @@ export const handler: Handlers<Post> = {
 
 export default function Post({ data }: PageProps<Post>) {
   return (
-    <>
+    <div class="bg-slate-100 w-full h-screen">
       <Head>
         <title>My Updating (b)logs</title>
       </Head>
@@ -35,11 +35,11 @@ export default function Post({ data }: PageProps<Post>) {
         <Header />
         <div class="mt-12 text-lg flex flex-col mx-auto justify-center items-center">
           <div class="flex flex-col mx-auto" key={data.id}>
-            <h1 class="font-bold text-2xl md:text-5xl">
+            <h1 class="font-bold flex justify-center items-center text-2xl md:text-5xl">
               {data.title}
             </h1>
             <time
-              class="flex justify-end text-gray-500 mt-5 font-semibold text-sm"
+              class="flex justify-end items-center text-gray-500 mt-5 font-semibold text-sm"
               dateTime={data.createdAt}
             >
               {dayjs(data.createdAt).tz("Asia/Tokyo").format(
@@ -47,7 +47,7 @@ export default function Post({ data }: PageProps<Post>) {
               )}
             </time>
             <div
-              class="mt-5 font-semibold"
+              class="mt-10 flex justify-start mx-auto font-semibold"
               dangerouslySetInnerHTML={{ __html: data.content }}
             >
             </div>
@@ -55,6 +55,6 @@ export default function Post({ data }: PageProps<Post>) {
         </div>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

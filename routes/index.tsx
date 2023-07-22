@@ -28,7 +28,7 @@ dayjs.tz.setDefault("Asia/Tokyo");
 
 export default function Home({ data }: PageProps<Post>) {
   return (
-    <>
+    <div class="bg-slate-100 w-full h-screen">
       <Head>
         <title>My Updating (b)logs</title>
       </Head>
@@ -58,6 +58,6 @@ export default function Home({ data }: PageProps<Post>) {
         </section>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
