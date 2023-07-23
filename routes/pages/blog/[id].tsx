@@ -39,15 +39,18 @@ export default function Post({ data }: PageProps<Post>) {
               {data.title}
             </h1>
             <time
-              class="flex justify-end items-center text-gray-500 mt-5 font-semibold text-sm"
+              class="flex justify-end items-center text-gray-500 mt-8 font-semibold text-sm"
               dateTime={data.createdAt}
             >
               {dayjs(data.createdAt).tz("Asia/Tokyo").format(
                 "YYYY年MM月DD日 HH:mm",
               )}
             </time>
+            <p class="flex justify-end items-center text-gray-500 mt-2 font-semibold text-sm">
+              #{data.category && data.category.name}
+            </p>
             <div
-              class="mt-10 flex justify-start mx-auto font-semibold"
+              class="mt-5 flex justify-start mx-auto font-semibold"
               dangerouslySetInnerHTML={{ __html: data.content }}
             >
             </div>

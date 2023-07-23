@@ -51,6 +51,9 @@ export default function Home({ data }: PageProps<Post>) {
                       "YYYY年MM月DD日 HH:mm",
                     )}
                   </time>
+                  <p class="text-gray-500 text-sm">
+                    #{content.category && content.category.name}
+                  </p>
                 </a>
               </div>
             );
