@@ -7,13 +7,23 @@ import timezone from "dayjs/plugin/timezone";
 import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.tsx";
 import type { Post } from "../types/post.ts";
+import { Pagination } from "../components/Pagination.tsx";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
+    // const PER_PAGE = 5;
+    const id = ctx.params.id;
     const blogs = await microcmsClient.get<Post>({
       endpoint: "blogs",
-      queries: { limit: 99 },
+      queries: { offset: (id - 1) * 5, limit: 999 },
     });
+    // const range = (start, end) =>
+    //   [...Array(end - start + 1)].map((_, i) => start + i);
+    // const totalCount = blogs.totalCount;
+    // const paths = range(1, Math.ceil(blogs.totalCount / PER_PAGE)).map((blog) =>
+    //   `/blog/page/${blog}`
+    // );
+    // console.log("totalCount:", totalCount);
     if (!blogs) {
       return new Response("Response not found", { status: 404 });
     }
@@ -34,13 +44,13 @@ export default function Home({ data }: PageProps<Post>) {
       </Head>
       <div class="font-sans bg-slate-100 mx-auto px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col justify-center">
         <Header />
-        <h1 class="mt-5 font-extrabold text-5xl flex mx-auto items-center justify-center">
+        <h1 class="mt-5 font-extrabold text-3xl md:text-5xl flex mx-auto items-center justify-center">
           My Updating (b)logs
         </h1>
         <section class="mt-12 text-lg flex flex-col mx-auto justify-center items-center">
           {data.contents.map((content) => {
             return (
-              <div class="p-4 font-semibold" key={content.id}>
+              <div class="p-4 font-normal" key={content.id}>
                 <a href={`/pages/blog/${content.id}`} alt={content.title}>
                   <p class="text-2xl  hover:font-extrabold">{content.title}</p>
                   <time
@@ -59,6 +69,7 @@ export default function Home({ data }: PageProps<Post>) {
             );
           })}
         </section>
+        {/* <Pagination totalCount={data.totalCount} /> */}
         <Footer />
       </div>
     </div>

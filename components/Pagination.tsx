@@ -1,10 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { microcmsClient } from "../lib/microcmsClient.ts";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-import type { Post } from "../types/post.ts";
 
 export const Pagination = ({ totalCount }) => {
   const PER_PAGE = 5;
@@ -15,10 +11,13 @@ export const Pagination = ({ totalCount }) => {
   };
 
   return (
-    <ul>
+    <ul class="flex flex-row mx-auto justify-center items-center mt-3">
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
-        <li key={index}>
-          <a href={`/post/page/${number}`}>{number}</a>
+        <li
+          class="list-none px-3 text-xl hover:font-bold"
+          key={index}
+        >
+          <a href={`routes/pages/blog/page/${number}`}>{number}</a>
         </li>
       ))}
     </ul>

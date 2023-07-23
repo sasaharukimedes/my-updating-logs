@@ -35,7 +35,7 @@ export default function Post({ data }: PageProps<Post>) {
         <Header />
         <div class="mt-12 text-lg flex flex-col mx-auto justify-center items-center">
           <div class="flex flex-col mx-auto" key={data.id}>
-            <h1 class="font-bold flex justify-center items-center text-2xl md:text-5xl">
+            <h1 class="font-bold flex justify-center items-center text-3xl md:text-4xl">
               {data.title}
             </h1>
             <time
