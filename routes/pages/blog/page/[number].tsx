@@ -1,13 +1,14 @@
+import { Pagination } from "../../../../components/Pagination.tsx";
+import { microcmsClient } from "../../../../lib/microcmsClient.ts";
+
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import { microcmsClient } from "../lib/microcmsClient.ts";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import Header from "../components/Header.tsx";
-import Footer from "../components/Footer.tsx";
-import type { Post } from "../types/post.ts";
-import { Pagination } from "../components/Pagination.tsx";
+import Header from "../../../../components/Header.tsx";
+import Footer from "../../../../components/Footer.tsx";
+import type { Post } from "../../../../types/post.ts";
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {

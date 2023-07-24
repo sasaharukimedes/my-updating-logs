@@ -10,7 +10,7 @@ export default function Header({ active }: Props) {
   ];
 
   return (
-    <div class="bg-slate-100 w-full mx-auto py-4 px-8 flex flex-col md:flex-row gap-2">
+    <div class="bg-slate-100 w-full mx-auto py-8 px-8 flex flex-col md:flex-row gap-2">
       <div class="flex items-center flex-1">
         <img
           width="70"

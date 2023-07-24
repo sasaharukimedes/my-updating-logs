@@ -1,7 +1,3 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
-import { microcmsClient } from "../lib/microcmsClient.ts";
-
 export const Pagination = ({ totalCount }) => {
   const PER_PAGE = 5;
 
@@ -17,7 +13,7 @@ export const Pagination = ({ totalCount }) => {
           class="list-none px-3 text-xl hover:font-bold"
           key={index}
         >
-          <a href={`routes/pages/blog/page/${number}`}>{number}</a>
+          <a href={`/pages/blog/page/${number}`}>{number}</a>
         </li>
       ))}
     </ul>
