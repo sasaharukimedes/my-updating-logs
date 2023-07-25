@@ -10,9 +10,10 @@ import Header from "../../../../components/Header.tsx";
 import Footer from "../../../../components/Footer.tsx";
 import type { Post } from "../../../../types/post.ts";
 
+const PER_PAGE = 5;
+
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
-    const PER_PAGE = 5;
     const id = ctx.params.id;
     const blogs = await microcmsClient.get<Post>({
       endpoint: "blogs",

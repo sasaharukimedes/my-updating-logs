@@ -40,10 +40,11 @@ export default function AboutMe() {
               University.<br />
               Now I'm a programmer, writing this blogs and creating my own
               apps.<br />
-              In this blog, I will write about my feelings, thoughts, etc., and
-              learnings about the program, regardless of genre.<br />
-              So please read them if you are interested!<br />
-              For more information about the program, please see the portfolio!
+              In this blog, I will write about my feelings, thoughts, and what I
+              learned regardless of genre.<br />
+              So please read them if you are interested.<br />
+              For further information on my programming activities, please watch
+              my Github! You can jump to my Github from next to my icon!
             </div>
           </div>
         </div>
