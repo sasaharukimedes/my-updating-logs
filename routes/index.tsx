@@ -23,8 +23,11 @@ export const handler: Handlers<Post> = {
     const paths = range(1, Math.ceil(blogs.totalCount / PER_PAGE)).map((
       number,
     ) => `/pages/blog/page/${number}`);
+
+    console.log("id:", id);
     console.log("totalCount:", totalCount);
     console.log("Path:", paths);
+
     if (!blogs) {
       return new Response("Response not found", { status: 404 });
     }
