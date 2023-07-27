@@ -6,6 +6,10 @@ export const Pagination = ({ totalCount }) => {
     return Array.from({ length }, (_, i) => start + i);
   };
 
+  // console.log("totalCount:", totalCount);
+  // console.log("range:", range);
+  // console.log("totalCount:", totalCount);
+
   return (
     <ul class="flex flex-row mx-auto justify-center items-center mt-3">
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (

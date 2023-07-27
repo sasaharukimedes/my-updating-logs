@@ -10,6 +10,11 @@ import Header from "../../../../components/Header.tsx";
 import Footer from "../../../../components/Footer.tsx";
 import type { Post } from "../../../../types/post.ts";
 
+//タイムゾーンを設定
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Asia/Tokyo");
+
 const PER_PAGE = 5;
 
 export const handler: Handlers<Post> = {
@@ -37,12 +42,7 @@ export const handler: Handlers<Post> = {
   },
 };
 
-//タイムゾーンを設定
-dayjs.extend(utc);
-dayjs.extend(timezone);
-dayjs.tz.setDefault("Asia/Tokyo");
-
-export default function Home({ data }: PageProps<Post>) {
+export default function BlogPage({ data }: PageProps<Post>) {
   return (
     <div class="bg-slate-100 w-full h-screen">
       <Head>

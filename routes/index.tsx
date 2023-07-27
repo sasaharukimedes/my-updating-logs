@@ -9,6 +9,11 @@ import Footer from "../components/Footer.tsx";
 import type { Post } from "../types/post.ts";
 import { Pagination } from "../components/Pagination.tsx";
 
+//タイムゾーンを設定
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Asia/Tokyo");
+
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
     const PER_PAGE = 5;
@@ -24,6 +29,7 @@ export const handler: Handlers<Post> = {
       number,
     ) => `/pages/blog/page/${number}`);
 
+    //確認用
     console.log("id:", id);
     console.log("totalCount:", totalCount);
     console.log("Path:", paths);
@@ -34,11 +40,6 @@ export const handler: Handlers<Post> = {
     return ctx.render(blogs);
   },
 };
-
-//タイムゾーンを設定
-dayjs.extend(utc);
-dayjs.extend(timezone);
-dayjs.tz.setDefault("Asia/Tokyo");
 
 export default function Home({ data }: PageProps<Post>) {
   return (
