@@ -17,7 +17,8 @@ dayjs.tz.setDefault("Asia/Tokyo");
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
     const PER_PAGE = 5;
-    const id = ctx.params.id;
+    const params = ctx.params;
+    const id = parseInt(params.number, 10);
     const blogs = await microcmsClient.get<Post>({
       endpoint: "blogs",
       queries: { offset: (id - 1) * 5, limit: 5 },
@@ -30,9 +31,10 @@ export const handler: Handlers<Post> = {
     ) => `/pages/blog/page/${number}`);
 
     //確認用
-    console.log("id:", id);
-    console.log("totalCount:", totalCount);
-    console.log("Path:", paths);
+    // console.log("id:", id);
+    // console.log("totalCount:", totalCount);
+    // console.log("Path:", paths);
+    // console.log("indexParams:", params);
 
     if (!blogs) {
       return new Response("Response not found", { status: 404 });

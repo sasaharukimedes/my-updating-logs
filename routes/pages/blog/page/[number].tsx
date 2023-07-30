@@ -19,7 +19,8 @@ const PER_PAGE = 5;
 
 export const handler: Handlers<Post> = {
   async GET(_req, ctx) {
-    const id = ctx.params.id;
+    const params = ctx.params;
+    const id = parseInt(params.number, 10);
     const blogs = await microcmsClient.get<Post>({
       endpoint: "blogs",
       queries: { offset: (id - 1) * 5, limit: 5 },
@@ -31,9 +32,11 @@ export const handler: Handlers<Post> = {
       number,
     ) => `/pages/blog/page/${number}`);
 
-    console.log("id:", id);
-    console.log("totalCount:", totalCount);
-    console.log("Path:", paths);
+    // console.log("id:", id);
+    // console.log("totalCount:", totalCount);
+    // console.log("Path:", paths);
+    // console.log("blogs:", blogs);
+    // console.log("numberParams:", id);
 
     if (!blogs) {
       return new Response("Response not found", { status: 404 });

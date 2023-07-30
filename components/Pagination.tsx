@@ -6,7 +6,6 @@ export const Pagination = ({ totalCount }) => {
     return Array.from({ length }, (_, i) => start + i);
   };
 
-  // console.log("totalCount:", totalCount);
   // console.log("range:", range);
   // console.log("totalCount:", totalCount);
 

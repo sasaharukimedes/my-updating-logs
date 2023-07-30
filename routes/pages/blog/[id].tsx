@@ -14,11 +14,10 @@ export const handler: Handlers<Post> = {
     const blogs = await microcmsClient.get<Post>({
       endpoint: "blogs",
       contentId: id,
-      queries: { limit: 99 },
     });
 
-    console.log("id:", id); // idの値をコンソールに出力して確認
-    console.log("blogs:", blogs); // blogsの値をコンソールに出力して確認
+    // console.log("id:", id); // idの値をコンソールに出力して確認
+    // console.log("blogs:", blogs); // blogsの値をコンソールに出力して確認
 
     if (!blogs) {
       return new Response("Response not found", { status: 404 });
