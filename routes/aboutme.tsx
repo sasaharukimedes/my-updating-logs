@@ -33,18 +33,20 @@ export default function AboutMe() {
           </div>
           <div class="mt-5 flex container  justify-center items-center mx-auto font-semibold">
             <div class="p-2 leading-loose">
-              I am 28 years old, born in 1995, from Hokkaido, Japan. <br />
-              I was in Hokkaido until high school. <br />
-              After graduating, I attended a prep school for a year and then
-              enrolled in the School of Global Japanese Studies at Meiji
+              I was born in 1995 in Hokkaido, Japan and am currently 28 years
+              old.<br />
+              Until high school, I lived in Hokkaido.<br />
+              After graduating, I spent a year at a prep school before enrolling
+              in the School of Global Japanese Studies at Meiji
               University.<br />
-              Now I'm a programmer, writing this blogs and creating my own
-              apps.<br />
+              As a programmer, I am currently writing this blog and creating my
+              own apps.<br />
               In this blog, I will write about my feelings, thoughts, and what I
-              learned regardless of genre.<br />
-              So please read them if you are interested.<br />
-              For further information on my programming activities, please watch
-              my Github! You can jump to my Github from next to my icon!
+              learned, regardless of the genre.<br />
+              Please read them if you would like.<br />
+              To learn more about my programming activities, please check out my
+              Github!<br />
+              Please go to my Github next to my icon!
             </div>
           </div>
         </div>
