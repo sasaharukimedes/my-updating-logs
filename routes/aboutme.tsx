@@ -36,17 +36,15 @@ export default function AboutMe() {
               I was born in 1995 in Hokkaido, Japan and am currently 28 years
               old.<br />
               Until high school, I lived in Hokkaido.<br />
-              After graduating, I spent a year at a prep school before enrolling
-              in the School of Global Japanese Studies at Meiji
-              University.<br />
+              From 2015 to 2019, I was a student in the School of Global
+              Japanese Studies at Meiji University.<br />
               As a programmer, I am currently writing this blog and creating my
               own apps.<br />
               In this blog, I will write about my feelings, thoughts, and what I
               learned, regardless of the genre.<br />
               Please read them if you would like.<br />
               To learn more about my programming activities, please check out my
-              Github!<br />
-              Please go to my Github next to my icon!
+              Github or my Portfolio!
             </div>
           </div>
         </div>
