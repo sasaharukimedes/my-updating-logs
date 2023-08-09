@@ -19,7 +19,7 @@ export default function AboutMe() {
               height="150"
               src="myself-image.gif"
               alt="My image Cartoon"
-              class="m-3"
+              class="m-3 rounded-full"
             />
             <h2 class="mt-2 text-2xl font-bold">
               I'm Harukimedes.

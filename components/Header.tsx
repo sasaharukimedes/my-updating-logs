@@ -17,7 +17,7 @@ export default function Header({ active }: Props) {
           height="70"
           src="/myself-image.gif"
           alt="My image Cartoon"
-          class="mr-2"
+          class="mr-2 rounded-full"
         />
         <a href="/" class="text-xl font-normal hover:font-bold">
           My Updating (b)logs
