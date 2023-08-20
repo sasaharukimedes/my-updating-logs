@@ -6,7 +6,10 @@ export default function Header({ active }: Props) {
   const menus = [
     { name: "AboutMe", href: "/aboutme" },
     { name: "Articles", href: "/" },
-    { name: "Portfolio", href: "/portfolio" },
+    {
+      name: "Portfolio",
+      href: "https://portfolio-sasaharukimedes.vercel.app/",
+    },
   ];
 
   return (
