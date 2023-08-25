@@ -64,14 +64,14 @@ export default function Home({ data }: PageProps<Post>) {
                 <a href={`/pages/blog/${content.id}`} alt={content.title}>
                   <p class="text-2xl  hover:font-extrabold">{content.title}</p>
                   <time
-                    class="text-gray-500 text-sm"
+                    class="text-gray-500 text-sm flex mx-auto justify-end"
                     dateTime={content.createdAt}
                   >
                     {dayjs(content.createdAt).tz("Asia/Tokyo").format(
                       "YYYY年MM月DD日 HH:mm",
                     )}
                   </time>
-                  <p class="text-gray-500 text-sm">
+                  <p class="text-gray-500 text-sm flex mx-auto justify-end">
                     #{content.category && content.category.name}
                   </p>
                 </a>

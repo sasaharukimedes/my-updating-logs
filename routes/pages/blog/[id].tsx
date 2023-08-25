@@ -51,7 +51,7 @@ export default function Post({ data }: PageProps<Post>) {
               #{data.category && data.category.name}
             </p>
             <div
-              class="mt-5 flex justify-start mx-auto font-semibold"
+              class="mt-5 flex-col justify-start mx-auto font-semibold"
               dangerouslySetInnerHTML={{ __html: data.content }}
             >
             </div>
