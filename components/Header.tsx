@@ -8,7 +8,7 @@ export default function Header({ active }: Props) {
     { name: "Articles", href: "/" },
     {
       name: "Portfolio",
-      href: "https://portfolio-sasaharukimedes.vercel.app/",
+      href: "https://harukimedes-portfolio.vercel.app",
     },
   ];
 
