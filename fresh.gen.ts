@@ -2,29 +2,30 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/[name].tsx";
-import * as $1 from "./routes/_app.tsx";
-import * as $2 from "./routes/aboutme.tsx";
-import * as $3 from "./routes/api/joke.ts";
-import * as $4 from "./routes/index.tsx";
-import * as $5 from "./routes/pages/blog/[id].tsx";
-import * as $6 from "./routes/pages/blog/page/[number].tsx";
-import * as $$0 from "./islands/Counter.tsx";
+import * as $_name_ from "./routes/[name].tsx";
+import * as $_app from "./routes/_app.tsx";
+import * as $aboutme from "./routes/aboutme.tsx";
+import * as $api_joke from "./routes/api/joke.ts";
+import * as $index from "./routes/index.tsx";
+import * as $pages_blog_id_ from "./routes/pages/blog/[id].tsx";
+import * as $pages_blog_page_number_ from "./routes/pages/blog/page/[number].tsx";
+import * as $Counter from "./islands/Counter.tsx";
+import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
-    "./routes/[name].tsx": $0,
-    "./routes/_app.tsx": $1,
-    "./routes/aboutme.tsx": $2,
-    "./routes/api/joke.ts": $3,
-    "./routes/index.tsx": $4,
-    "./routes/pages/blog/[id].tsx": $5,
-    "./routes/pages/blog/page/[number].tsx": $6,
+    "./routes/[name].tsx": $_name_,
+    "./routes/_app.tsx": $_app,
+    "./routes/aboutme.tsx": $aboutme,
+    "./routes/api/joke.ts": $api_joke,
+    "./routes/index.tsx": $index,
+    "./routes/pages/blog/[id].tsx": $pages_blog_id_,
+    "./routes/pages/blog/page/[number].tsx": $pages_blog_page_number_,
   },
   islands: {
-    "./islands/Counter.tsx": $$0,
+    "./islands/Counter.tsx": $Counter,
   },
   baseUrl: import.meta.url,
-};
+} satisfies Manifest;
 
 export default manifest;
